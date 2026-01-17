@@ -1,6 +1,35 @@
+import { useState } from 'react';
 import styles from './PlanResult.module.css';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
+
+const GoldDust = () => {
+    const [particles] = useState(() => {
+        const particleCount = 50;
+        return Array.from({ length: particleCount }).map((_, i) => ({
+            id: i,
+            left: Math.random() * 100, // %
+            delay: Math.random() * 2, // s
+            duration: 2 + Math.random() * 3, // s
+        }));
+    });
+
+    return (
+        <div className={styles.goldDustContainer}>
+            {particles.map(p => (
+                <div
+                    key={p.id}
+                    className={styles.goldDust}
+                    style={{
+                        left: `${p.left}%`,
+                        animationDelay: `${p.delay}s`,
+                        animationDuration: `${p.duration}s`
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
 
 export const PlanResult = ({ plan, onReset }) => {
     if (!plan) return null;
@@ -26,6 +55,9 @@ export const PlanResult = ({ plan, onReset }) => {
 
     return (
         <Card className={styles.resultCard}>
+            <GoldDust />
+            <div className={styles.completionText}>完 成</div>
+
             <h2 style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--color-primary)' }}>
                 決定された計画
             </h2>
