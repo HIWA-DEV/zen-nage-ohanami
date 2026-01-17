@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import styles from './PlanResult.module.css';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
@@ -32,6 +33,17 @@ const GoldDust = () => {
 };
 
 export const PlanResult = ({ plan, onReset }) => {
+    // コンポーネント表示時に紙吹雪を発射 (useEffectで制御)
+    useEffect(() => {
+        if (plan) {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    }, [plan]);
+
     if (!plan) return null;
 
     const handleShare = () => {
