@@ -23,7 +23,7 @@ function App() {
     <div className="app-container">
       <header style={{ padding: '4rem 2rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '4rem', marginBottom: '1rem', textShadow: 'var(--shadow-glow)' }}>
-          Zen-Nage<br />
+          MUSEKININ<br />
           <span className="chaos-text" style={{ color: 'var(--color-primary)' }}>Ohanami</span>
         </h1>
         <p style={{ marginBottom: '3rem', fontSize: '1.2rem', opacity: 0.8 }}>
