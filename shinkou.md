@@ -66,3 +66,10 @@
 - 実装: `GoldDust`コンポーネントと「完成」スタンプ。
 - 検証: Lint check pass. `state`初期化の最適化を実施。
 - 次のステップ: Vercelへのデプロイ準備。
+
+**16:50** - ローカル動作確認 (FadeOut Fix)
+- PR #6 (FadeOut復旧) のローカル動作確認を実施。
+- 直前のマージ等の経緯により一部ログ欠損あり。現状設定:
+    - Branch: `fix/restore-fadeout`
+    - Target: `fadeOut` アニメーションの復元確認
+    - Text: 「責任放棄」

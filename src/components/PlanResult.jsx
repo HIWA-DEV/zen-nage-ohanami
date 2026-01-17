@@ -68,7 +68,7 @@ export const PlanResult = ({ plan, onReset }) => {
     return (
         <Card className={styles.resultCard}>
             <GoldDust />
-            <div className={styles.completionText}>完 成</div>
+            <div className={styles.completionText}>責任放棄</div>
 
             <h2 style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--color-primary)' }}>
                 決定された計画
