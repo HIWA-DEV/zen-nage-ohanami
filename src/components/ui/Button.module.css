@@ -1,0 +1,91 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    opacity: 0.8;
+    z-index: -1;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+.button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Variants */
+.secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-secondary);
+}
+
+.secondary::before {
+    display: none;
+}
+
+.secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.chaos {
+    font-family: var(--font-chaos);
+    font-size: 1.2rem;
+    padding: var(--spacing-md) var(--spacing-xl);
+    animation: jitter 0.3s infinite;
+}
+
+.chaos::before {
+    background: linear-gradient(90deg, var(--color-danger), var(--color-accent));
+}
+
+@keyframes jitter {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(1px, 1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, -1px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translate(1px, -1px) rotate(0.5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}

@@ -21,3 +21,9 @@
 - `user.name` "HIWA-DEV", `user.email` "hiwa-dev@example.com" 設定完了。
 - `create-vite` でプロジェクト作成中（React + JavaScript）。
 - `rolldown-vite` 使用せず。
+
+**14:55** - 基盤構築完了
+- `index.css`: 変数定義、Google Fonts導入。
+- UI Components: `Button`, `Card` 作成。
+- `App.jsx`: UIコンポーネント適用、免責事項表示。
+- Lint check passed.
